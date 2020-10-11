@@ -52,4 +52,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 #### UML
 
-![UML Diagram](./assets/class26.jpg)
+![UML Diagram](../assets/class26.jpg)
