@@ -41,7 +41,7 @@ class Form extends React.Component {
 
     this.setState({ method, [method]: 'green' });
   };
-
+//[method] is like ${method}
   render() {
     return (
       <div className="form">
