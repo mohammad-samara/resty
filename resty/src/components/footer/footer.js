@@ -13,5 +13,8 @@ class Footer extends React.Component {
   }
   
 }
+//better be a function since nothing is passed to it
+//const Footer = () => <footer> <div className="footer"> <p> &copy; 2020 </p> </div> </footer>;
+
 
 export default Footer;
