@@ -2,8 +2,8 @@ import React from 'react';
 import './form.scss';
 
 class Form extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       url: '',
       method: '',
@@ -16,19 +16,20 @@ class Form extends React.Component {
   }
   handelUrl = (e) => {
     this.setState({ url: e.target.value });
-    console.log(this.state.url);
   };
   click = (e) => {
-    let requstes = this.state.requstes;
-    let html = (
-      <p>
-        <span className="span">{this.state.method}</span>
-        {this.state.url}
-      </p>
-    );
-    requstes.push(html);
-    this.setState({ requstes });
-    console.log('helllo', this.state);
+    this.props.updataState(this.state.url);
+    this.setState({ url: '' });
+    // let requstes = this.state.requstes;
+    // let html = (
+    //   <p>
+    //     <span className="span">{this.state.method}</span>
+    //     {this.state.url}
+    //   </p>
+    // );
+    // requstes.push(html);
+    // this.setState({ requstes });
+    // console.log('helllo', this.state);
   };
   handelMethod = (e) => {
     let method = e.target.name;
@@ -47,13 +48,17 @@ class Form extends React.Component {
       <div className="form">
         <p className="purl">
           <span className="span">URL:</span>
-          <input onChange={this.handelUrl} />
+          <input name="value" value={this.state.url} onChange={this.handelUrl} />
           <button id="button" onClick={this.click}>
             GO!
           </button>
         </p>
 
-        <div></div>
+        
+        
+        
+        
+        
         <button
           style={{ background: this.state.get }}
           name="get"
@@ -82,7 +87,6 @@ class Form extends React.Component {
         >
           DELETE
         </button>
-        <div className="continar">{this.state.requstes}</div>
       </div>
     );
   }

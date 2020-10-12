@@ -12,4 +12,6 @@ class Header extends React.Component {
   
 }
 
+//better be a function since nothing is passed to it
+//const Header = () =><header><h1>RESTY</h1></header>;
 export default Header;
