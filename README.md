@@ -1,12 +1,12 @@
-# LAB - 26
+# LAB - 27
 <!-- ## Project: Project Name Here -->
-## Component Based UI
+## Props and State
 
 ### Author: Mohammad Samara
 
 ### Links and Resources
 
-* [submission PR](https://github.com/mohammad-samara/resty/pull/1)
+* [submission PR](https://github.com/mohammad-samara/resty/pull/2)
 
 ### Modules
 
