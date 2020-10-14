@@ -19,6 +19,11 @@ class Header extends React.Component {
                 <p className="link">History</p>
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/help">
+                <p className="link">help</p>
+              </NavLink>
+            </li>
           </ul>
         </nav>
     </div>
