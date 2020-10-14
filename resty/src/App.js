@@ -5,8 +5,11 @@ import Form from './components/form/form.js';
 import Footer from './components/footer/footer.js';
 import Results from './components/results/results.js';
 import History from './components/history/history.js';
+
 import Loader from 'react-loader-spinner';
 import { If, Then } from './if/index.js';
+import { Route } from 'react-router-dom';
+import Help from './components/help/help';
 
 //class App
 class App extends React.Component {
@@ -46,7 +49,7 @@ class App extends React.Component {
     };
     if (body) obj.body = JSON.stringify(body);
     let data = await fetch(url, obj);
-
+    data.headers.forEach((t) => this.setState({ headers: [t] }));
     data = await data.json();
     this.setState({
       results: data.results || data,
@@ -60,11 +63,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <>
+        <Route path="/" exact>
           <div className="test">
             <div>
               <h3>History</h3>
-              <History updataState={this.updataState}></History>
+              <div>{this.state.requstes}</div>
             </div>
             <div>
               <Form updataState={this.updataState} />
@@ -92,7 +95,13 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-        </>
+          </Route>
+          <Route path="/history" exact>
+          <History updataState={this.updataState}></History>
+        </Route>
+        <Route path="/help" exact>
+          <Help></Help>
+        </Route>
         <Footer />
       </div>
     );
